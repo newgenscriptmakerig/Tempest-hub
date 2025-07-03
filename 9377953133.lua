@@ -1,14 +1,9 @@
+getgenv().TempestHubVersion = "v1.4.4"
 
-print("Tempest Hub loaded successfully in your game!")
+local supportedGames = {
+    "9377953133" -- MSF
+}
 
-local player = game.Players.LocalPlayer
-local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
-gui.Name = "TempestHubGUI"
-
-local label = Instance.new("TextLabel", gui)
-label.Size = UDim2.new(0, 300, 0, 50)
-label.Position = UDim2.new(0.5, -150, 0.3, 0)
-label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-label.TextColor3 = Color3.fromRGB(255, 255, 255)
-label.TextScaled = true
-label.Text = "✅ Tempest Hub Loaded!"
+if table.find(supportedGames, tostring(game.GameId)) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/10tempest01/tempest-hub/refs/heads/main/Games/" .. game.GameId .. ".lua"))()
+end
