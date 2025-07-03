@@ -1,4 +1,4 @@
--- 9377953133.lua
+
 print("Tempest Hub loaded successfully in your game!")
 
 local player = game.Players.LocalPlayer
